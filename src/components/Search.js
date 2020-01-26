@@ -34,7 +34,7 @@ class Search extends React.Component{
 
                     <div className='form-group col-md-4'>
                         <input type='submit' 
-                                className='btn btn-lg btn-info btn-block' 
+                                className='btn btn-lg btn-success btn-block' 
                                 value='Search'
                         />
                         
