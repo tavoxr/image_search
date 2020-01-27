@@ -7,9 +7,9 @@ const Error=(props)=>{
 
 return(
 <div>
-    <h2>
+    <h3>
         {props.error}
-    </h2>    
+    </h3>    
 </div>
 
 

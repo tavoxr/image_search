@@ -28,7 +28,6 @@ class App extends React.Component {
 
 
 
-     
 
       try{
 
@@ -45,7 +44,9 @@ class App extends React.Component {
   
         })
         
-        console.log(data.hits);
+    
+
+        
 
 
 
@@ -54,14 +55,14 @@ class App extends React.Component {
         // console.log(error.message);
         this.setState({
           loading:false,
-          error:`Sorry we don't have images about ${termino}`
+          error:`Sorry we don't have images about ${termino}.`
         })
     
       }
 
     }else{
         this.setState({
-          error:'Type Something',
+          error:'Please enter something to search.',
           loading:false
         })
       
@@ -96,11 +97,11 @@ class App extends React.Component {
       
       />
     }
-    // if(!this.state.imagenes){
-    //   return <Error
-    //     error={}
-    //   />
-    // }
+    if(this.state.termino && this.state.imagenes.length===0){
+      return  <h3>Sorry we don't have images about {this.state.termino}</h3>
+      
+      
+   }
 
     return  <ImagesContainer
                 imagenes={this.state.imagenes}
@@ -112,7 +113,7 @@ class App extends React.Component {
 render(){
   return (
     <div className="app container">
-      <div className='jumbotron'>
+      <div className='jumbotron' id='title'>
         <p className='lead text-center'>Image Search</p>
         <Search
             datosBusqueda={this.datosBusqueda}
