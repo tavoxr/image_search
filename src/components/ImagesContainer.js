@@ -21,7 +21,11 @@ class ImagesContainer  extends React.Component{
                        ))} 
                    </div>
                    <div className='row justify-content-center'>
-                    <NextPage/>
+                    <NextPage
+                        paginaAnterior={this.props.paginaAnterior}
+                        paginaSiguiente={this.props.paginaSiguiente}
+                    
+                    />
                    </div>
                   
                </React.Fragment>

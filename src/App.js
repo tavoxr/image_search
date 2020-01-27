@@ -12,12 +12,56 @@ class App extends React.Component {
       termino:'',
       imagenes:[],
       loading:false,
-      error:null
+      error:null,
+      pagina:''
   }
+
+  paginaAnterior=()=>{
+  //leer el state de la pagina actual
+  let pagina= this.state.pagina;
+  //leer si la pagina es 1, no ir hacia atras
+
+  if(pagina===1)return null;
+  //sumar una pag a la pagina actual
+  pagina-=1;
+  //agregar el cambio al state
+  this.setState({
+    pagina,
+    loading:false,
+     error:null
+    
+  },()=>{this.consultarApi()});
+
+  // console.log(pagina);
+  }
+
+  paginaSiguiente=()=>{
+    //leer el state de la pagina actual
+    let pagina= this.state.pagina;
+    //sumar una pag a la pagina actual
+    pagina+=1;
+    //agregar el cambio al state
+    this.setState({
+      pagina,
+      loading:false,
+       error:null
+      
+    },()=>{this.consultarApi()});
+
+    // console.log(pagina);
+  }
+
+
+
+
+
+
 
   consultarApi= async()=>{
 
       const termino =this.state.termino;
+
+      const pagina=this.state.pagina;
       
       this.setState({
         loading:true,
@@ -31,7 +75,7 @@ class App extends React.Component {
 
       try{
 
-        const url = `https://pixabay.com/api/?key=14906587-973d8c93741cbcc837d6738da&q=${termino}&per_page=20&lang=es&en`;
+        const url = `https://pixabay.com/api/?key=14906587-973d8c93741cbcc837d6738da&q=${termino}&per_page=20&lang=es&en&page=${pagina}`;
         // console.log(url);
   
         const respuesta = await  fetch(url);
@@ -76,7 +120,8 @@ class App extends React.Component {
   datosBusqueda=(termino)=>{
     // console.log(termino);
     this.setState({
-      termino
+      termino:termino,
+      pagina:1
     },()=>{
       this.consultarApi();
     })
@@ -105,6 +150,8 @@ class App extends React.Component {
 
     return  <ImagesContainer
                 imagenes={this.state.imagenes}
+                paginaAnterior={this.paginaAnterior}
+                paginaSiguiente={this.paginaSiguiente}
  
            />
   }
