@@ -167,7 +167,7 @@ render(){
         
         />
       </div>
-      <div className='row justify-content-center'>
+      <div  id='showInfo'>
        {this.showInfo()}
       </div>
     
