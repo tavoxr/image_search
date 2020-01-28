@@ -45,6 +45,35 @@ code {
 
 }
 
+.imageContainer{
+
+background: red;
+display: flex;
+  flex-flow: column;
+  align-items: center;
+
+}
+
+#imageMap{
+  width: 100%;
+background: rebeccapurple;
+
+}
+
+/* #cardImageContainer{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: royalblue;
+} */
+
+
+#cardImage{
+width: 100%;
+
+}
+
 
 
 

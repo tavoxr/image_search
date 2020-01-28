@@ -11,8 +11,8 @@ class ImagesContainer  extends React.Component{
            console.log(imagenes);
 
            return(
-               <React.Fragment>
-                   <div className='col-12 p-5 row'>
+               <div className='imageContainer'>
+                   <div className='col-12 p-5 row' id='imageMap'>
                        {imagenes.map(imagen=>(
                            <Image
                                 key={imagen.id}
@@ -28,7 +28,7 @@ class ImagesContainer  extends React.Component{
                     />
                    </div>
                   
-               </React.Fragment>
+               </div>
            )
        }
     render(){
