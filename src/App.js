@@ -143,7 +143,7 @@ class App extends React.Component {
       />
     }
     if(this.state.termino && this.state.imagenes.length===0){
-      return  <h3>Sorry we don't have images about {this.state.termino}</h3>
+      return  <h4 className="text-center">Sorry we don't have images about {this.state.termino}</h4>
       
       
    }
@@ -159,15 +159,15 @@ class App extends React.Component {
 
 render(){
   return (
-    <div className="app container">
-      <div className='jumbotron' id='title'>
+    <div className="container">
+      <div className='jumbotron mt-3' id='title'>
         <p className='lead text-center'>Image Search</p>
         <Search
             datosBusqueda={this.datosBusqueda}
         
         />
       </div>
-      <div  id='showInfo'>
+      <div  className="d-flex justify-content-center" id='showInfo'>
        {this.showInfo()}
       </div>
     

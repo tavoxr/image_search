@@ -15,13 +15,6 @@ code {
 
 
 
-#title{
-
-
-
-}
-
-
 #title p{
 
   font-size: 1.6rem;
@@ -59,15 +52,6 @@ display: flex;
 /* background: rebeccapurple; */
 
 }
-
-/* #cardImageContainer{
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  background: royalblue;
-} */
-
 
 #cardImage{
 width: 100%;

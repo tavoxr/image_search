@@ -13,7 +13,7 @@ const Image =(props)=>{
         }=props.imagen;
 
     return(
-        <div className='col-12 col-sm-6 col-md-4 col-lg-3 mb-4' id='cardImageContainer'>
+        <div className='col-12 col-sm-12 col-md-6 col-lg-4 mb-4' id='cardImageContainer'>
             <div className='card' id='cardImage'>
                  <img src={previewURL} alt={tags} className='card-img-top'  />
                  <div className='card-body' id='cardText'>

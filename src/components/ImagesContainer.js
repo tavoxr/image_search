@@ -12,7 +12,7 @@ class ImagesContainer  extends React.Component{
 
            return(
                <div className='imageContainer'>
-                   <div className='col-12 p-5 row' id='imageMap'>
+                   <div className='col-12  row' id='imageMap'>
                        {imagenes.map(imagen=>(
                            <Image
                                 key={imagen.id}
